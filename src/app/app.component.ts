@@ -23,7 +23,6 @@ export class AppComponent implements OnInit {
   }
 
   getPosts() {
-    console.log('current page:', this.page);
     this.posts = this.postService.getPosts(this.page++);
   }
 }
