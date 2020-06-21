@@ -13,7 +13,7 @@ export class PostsService {
     }
 
     getPosts() : Array<Post> {
-        let url = 'https://gorest.co.in/public-api/posts?access-token='+environment.access_token;
+        let url = 'https://gorest.co.in/public-api/posts';
         let options = {
             headers: new HttpHeaders({
                 'Authorization': 'Bearer ' + environment.access_token
