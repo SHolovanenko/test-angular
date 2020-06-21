@@ -1,0 +1,9 @@
+.posts-wraper {
+    padding: 5rem;
+}
+
+.post {
+    border: 1px dashed black;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+}

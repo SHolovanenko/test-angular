@@ -11,13 +11,19 @@ import { PostsService } from './app.postSrvice';
 })
 
 export class AppComponent implements OnInit {
-  posts: Array<Post>;
+  posts: Array<Post> = [];
+  page: number;
 
   constructor(private postService: PostsService) {
-    //
+    this.page = 1;
   }
 
   ngOnInit() {
-    this.posts = this.postService.getPosts();
+    this.getPosts();
+  }
+
+  getPosts() {
+    console.log('current page:', this.page);
+    this.posts = this.postService.getPosts(this.page++);
   }
 }

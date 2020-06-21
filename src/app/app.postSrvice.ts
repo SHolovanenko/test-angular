@@ -12,8 +12,8 @@ export class PostsService {
         //
     }
 
-    getPosts() : Array<Post> {
-        let url = 'https://gorest.co.in/public-api/posts';
+    getPosts(page: number = 1) : Array<Post> {
+        let url = 'https://gorest.co.in/public-api/posts?page=' + page;
         let options = {
             headers: new HttpHeaders({
                 'Authorization': 'Bearer ' + environment.access_token
@@ -23,6 +23,7 @@ export class PostsService {
         this.http.get(url, options).subscribe((response) => {
             response['result'].forEach(element => {
                 var post = new Post();
+                post.id = element.id;
                 post.title = element.title;
                 post.body = element.body;
 
